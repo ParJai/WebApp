@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/styles/structurestyles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper blue darken-1">
+          <a href="/" class="brand-logo" id="nav-title">QuickPass</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/manage"><i class="material-icons right">vpn_key</i>Manage Passwords</a></li>
+            <li><a><i class="material-icons right">lock</i>Create Passwords</a></li>
+            <li><a><i class="material-icons right">account_circle</i>Sign In</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="section flow-text" id="stuffDetail">
+            <h1>Password details:</h1>
+            <table>
+                <tr>
+                    <th>Site:</th>
+                    <td>github.com</td>
+                </tr>
+                <tr>
+                    <th>Account Name:</th>
+                    <td>ParJai</td>
+
+                </tr>
+                <tr>
+                    <th>Password:</th>
+                    <td>
+                        ***************
+                        <a class="btn waves-effect waves-light white"><i
+                          class="material-icons center black-text text-darken-4">visibility</i></a>
+                        <div class="chip green white-text"> Strong </div>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section" id="stuffControls">
+            <a class="btn-large waves-effect waves-light orange left modal-trigger" href="#stuffEdit">
+                <i class="material-icons right">edit</i>Edit
+            </a>
+            <a class="btn-large waves-effect waves-light red right">
+                <i class="material-icons right">delete</i>Delete
+            </a>
+        </div>
+
+
+        <div class="modal" id="stuffEdit">
+
+            <div class="modal-content">
+
+                <h2>Edit password:</h2>
+                <form>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="site">Site:</label>
+                            <input type="text" name="site" class="validate" data-length="32" required>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="acctname">Account Name:</label>
+                            <input type="text" name="acctname" class="validate" data-length="32" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="pw">Password:</label>
+                            <input type="text" name="pw" class="validate" data-length="32" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn waves-effect waves-light " type="submit"><i
+                                class="material-icons right">send</i>Submit</button>
+
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Never Mind</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script> M.AutoInit();</script>
+
+</body>
+</html>
