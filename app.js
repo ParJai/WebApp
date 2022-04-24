@@ -25,24 +25,6 @@ app.get( "/manage/edit", ( req, res ) => {
     res.sendFile( __dirname + "/views/item.html" );
 } );
 
-
-
-app.get('/styles/structurestyles.css', (req, res) => {
-    res.sendFile( __dirname + '/views/styles/structurestyles.css')
-});
-
-app.get('/styles/homestyles.css', (req, res) => {
-    res.sendFile( __dirname + '/views/styles/homestyles.css')
-});
-
-app.get('/styles/structurestyles.css', (req, res) => {
-    res.sendFile( __dirname + '/views/styles/structurestyles.css')
-});
-
-app.get('/images/lock-key.png', (req, res) => {
-    res.sendFile( __dirname + '/views/images/lock-key.png')
-});
-
 // start the server
 app.listen( port, () => {
     console.log(`App server listening on ${ port }. (Go to http://localhost:${ port })` );
