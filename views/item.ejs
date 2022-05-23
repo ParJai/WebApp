@@ -41,7 +41,7 @@
                         <%= password %>
                         <a class="btn waves-effect waves-light white"><i
                           class="material-icons center black-text text-darken-4">visibility</i></a>
-                        <div class="chip green white-text"> <%= security %> </div>
+                        <div class="chip <%= security.split(' ')[0] %> white-text"> <%= security.split(' ')[1] %> </div>
 
                     </td>
                 </tr>
@@ -52,7 +52,7 @@
             <a class="btn-large waves-effect waves-light orange left modal-trigger" href="#stuffEdit">
                 <i class="material-icons right">edit</i>Edit
             </a>
-            <a class="btn-large waves-effect waves-light red right">
+            <a class="btn-large waves-effect waves-light red right" href="/manage/edit/<%= id %>/delete">
                 <i class="material-icons right">delete</i>Delete
             </a>
         </div>
@@ -63,7 +63,7 @@
             <div class="modal-content">
 
                 <h2>Edit password:</h2>
-                <form>
+                <form method="post" action="/manage/edit/<%= id %>">
                     <div class="row">
                         <div class="input-field col s6">
                             <label for="site">Site:</label>

@@ -27,7 +27,7 @@
         <div class="addContainer col s4">
             <div class="section s4" id="addForm">
                 <h2>Add password:</h2>
-                <form>
+                <form method="post">
                     <div class="row">
                         <div class="input-field col s12 add_input">
                             <label for="site">Site:</label>
@@ -64,8 +64,29 @@
 
                     </thead>
                     <tbody>
-
-                        <tr>
+                        <% for (let i=0; i<inventory.length; i++) { %>
+                            <tr>
+                                <td><%= inventory[i].site %></td>
+                                <td><%= inventory[i].acctname %></td>
+                                <td><%= inventory[i].password %></td>
+                                <td>
+                                    <a class="btn waves-effect waves-light white"><i
+                                            class="material-icons center black-text text-darken-4">visibility</i></a>
+                                    <a class="btn waves-effect waves-light white"><i
+                                            class="material-icons center black-text text-darken-4">content_copy</i></a>
+                                </td>
+                                <td>
+                                    <div class="chip <%= inventory[i].security.split(' ')[0] %> white-text"> <%= inventory[i].security.split(' ')[1] %> </div>
+                                </td>
+                                <td>
+                                    <a class="btn-small waves-effect waves-light blue" href="/manage/edit/<%= inventory[i].id %>"><i
+                                            class="material-icons right">edit</i>Edit</a>
+                                    <a class="btn-small waves-effect waves-light red" href="/manage/edit/<%= inventory[i].id %>/delete"><i
+                                            class="material-icons right">delete</i>Delete</a>
+                                </td>
+                            </tr>
+                        <% }; %>
+                        <!-- <tr>
                             <td>google.com</td>
                             <td>TKDPenguin</td>
                             <td>●●●●●●●●●●</td>
@@ -126,7 +147,7 @@
                                 <a class="btn-small waves-effect waves-light red"><i
                                         class="material-icons right">delete</i>Delete</a>
                             </td>
-                        </tr>
+                        </tr> -->
 
                     </tbody>
                 </table>

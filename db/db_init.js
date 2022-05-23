@@ -4,7 +4,7 @@ const db = require('./db_connection');
 const table = 'passwords';
 
 // delete the table if it already exists
-const drop_pw_table_sql = `DROP TABLE IF EXISTS '${table}';`
+const drop_pw_table_sql = 'DROP TABLE IF EXISTS `passwords`;'
 db.execute(drop_pw_table_sql);
 
 // create the table with suitable columns and such
@@ -29,9 +29,9 @@ const insert_pw_table_sql = `
         (?, ?, ?, ?);
 `
 
-db.execute(insert_pw_table_sql, ['google.com', 'TKDPenguin', '**********', 'Weak']);
-db.execute(insert_pw_table_sql, ['bergen.org', 'jaccro25', '********', 'Okay']);
-db.execute(insert_pw_table_sql, ['github.com', 'ParJai', '***************', 'Strong']);
+db.execute(insert_pw_table_sql, ['google.com', 'TKDPenguin', '**********', 'red Weak']);
+db.execute(insert_pw_table_sql, ['bergen.org', 'jaccro25', '********', 'orange Okay']);
+db.execute(insert_pw_table_sql, ['github.com', 'ParJai', '***************', 'green Strong']);
 
 // read data from table
 
