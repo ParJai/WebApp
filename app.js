@@ -4,11 +4,12 @@ const { send } = require("express/lib/response");
 const logger = require( 'morgan' )
 const app = express();
 const port = 8080;
+
 // Configure Express to use EJS
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-const db = require('./db/db_connection');
+const db = require('./db/db_pool');
 
 // Configure express to parse URL-encoded POST request bodies (traditional forms) 
 app.use(express.urlencoded({extended : false}));
